@@ -1,0 +1,28 @@
+<html>
+  <head> </head>
+  <body>
+    <form action="" method="post">
+      <input
+        type="text"
+        name="fullname"
+        id="fullname"
+        placeholder="fullname"
+      /><span class="err"></span><br />
+      <div id="showcomment">
+        You have <span id="numleft"></span> characters of your 255 left!
+      </div>
+      <textarea id="comments" maxlength="255"></textarea>
+      <input type="submit" name="submit" value="Enter" />
+    </form>
+    <script>
+      comment;
+      function showComment() {
+        //get the length of the comments.
+        comLength = document.getElementById('comments').length;
+        //find the characters left by subtracting 255 - length
+        //condition if we go over 255
+        //disable the field or just make the value equal to the first 255 characters.
+      }
+    </script>
+  </body>
+</html>
