@@ -1,5 +1,27 @@
 <html>
-  <head> </head>
+  <head>
+    <script>
+      function showComment() {
+        //get the length of the comments.
+        let comment = document.getElementById('comments');
+        let commentLength = comment.value.length;
+        const maxLength = 255;
+        //find the characters left by subtracting 255 - length
+        charactersLeft = 255 - commentLength;
+        document.getElementById('numleft').innerHTML = charactersLeft;
+        //condition if we go over 255
+        if (commentLength >= maxLength) {
+          document.getElementById('comments').value = document
+            .getElementById('comments')
+            .value.substring(0, 255);
+        } else {
+          console.log('all good');
+        }
+      }
+      //disable the field or just make the value equal to the first 255 characters.
+      //add back to textarea when complete: maxlength="255"
+    </script>
+  </head>
   <body>
     <form action="" method="post">
       <input
@@ -9,20 +31,10 @@
         placeholder="fullname"
       /><span class="err"></span><br />
       <div id="showcomment">
-        You have <span id="numleft"></span> characters of your 255 left!
+        You have <span id="numleft">255</span> characters of your 255 left!
       </div>
-      <textarea id="comments" maxlength="255"></textarea>
+      <textarea id="comments" onkeyup="showComment()"></textarea>
       <input type="submit" name="submit" value="Enter" />
     </form>
-    <script>
-      comment;
-      function showComment() {
-        //get the length of the comments.
-        comLength = document.getElementById('comments').length;
-        //find the characters left by subtracting 255 - length
-        //condition if we go over 255
-        //disable the field or just make the value equal to the first 255 characters.
-      }
-    </script>
   </body>
 </html>
